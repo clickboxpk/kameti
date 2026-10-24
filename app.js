@@ -9,7 +9,7 @@
       firstSetup: 'First-time setup', setupTitle: 'Create super admin', setupKey: 'Setup key', createAccount: 'Create account',
       committees: 'Committees', newCommittee: 'New committee', noCommittees: 'No committees yet. Create your first one.',
       name: 'Name', committeeName: 'Committee name', months: 'Number of months', amount: 'Monthly amount (Rs)',
-      startDate: 'Start date', payoutOrder: 'Payout order', fixed: 'Fixed order', ballot: 'Ballot (draw)', manual: 'Decided each month',
+      startDate: 'Start date', payoutOrder: 'Payout order', mode_fixed: 'Fixed order', mode_ballot: 'Ballot (draw)', mode_manual: 'Decided each month',
       notes: 'Notes (optional)', save: 'Save', cancel: 'Cancel', edit: 'Edit', delete: 'Delete', back: 'Back',
       members: 'Members', addMember: 'Add member', editMember: 'Edit member', phoneOptional: 'Phone (optional)',
       turn: 'Turn', turnOptional: 'Turn number', noMembers: 'No members yet. Add the first one.',
@@ -32,6 +32,21 @@
       getReady: 'Get ready…', spinning: 'Spinning…', congrats: 'Congratulations!', turnNo: 'Turn {n}', turnGoesTo: 'Turn {n}: {name}',
       drawLog: 'Draw log', drawComplete: 'Ballot complete. All turns are drawn.', remaining: '{n} on the wheel', ok: 'OK',
       ballotScheduled: 'Ballot time', noTime: 'No time set',
+      payments: 'Payments', stPaid: 'Paid', stPartial: 'Partial', stPending: 'Pending', monthN: 'Month {n}', month: 'Month',
+      collected: 'Collected', expected: 'Expected', totalCollected: 'Total collected', outstanding: 'Outstanding so far', payoutsGiven: 'Payouts given',
+      amountPaid: 'Amount received (Rs)', paidOn: 'Date', method: 'Method', cash: 'Cash', bank: 'Bank transfer', jazzcash: 'JazzCash', easypaisa: 'Easypaisa', other: 'Other',
+      reference: 'Reference no. (optional)', markPaid: 'Mark paid', markAllPaid: 'Mark all paid',
+      markAllAsk: 'Mark every member who has no record as paid for month {n}?',
+      payoutThisMonth: 'Payout this month', receiver: 'Receiver', recordPayout: 'Record payout', payoutAmount: 'Payout amount (Rs)',
+      payoutGiven: 'Given on {d}', payoutNotGiven: 'Not given yet', noReceiver: 'No member has turn {n} yet.', register: 'Full register',
+      remind: 'Reminders', remindTitle: 'Pending for month {n}', sendWhatsApp: 'WhatsApp', copyGroupMsg: 'Copy group message', copiedMsg: 'Message copied',
+      nobodyPending: 'Everyone has paid for this month.', noPhone: 'No phone saved',
+      remMsg: 'Assalam o Alaikum {name}, reminder: the {committee} committee payment of {amount} for month {n} is pending. Please pay and let me know. Thank you.',
+      remGroupMsg: '{committee} committee, month {n}: payment is pending from {names}. Please pay soon.',
+      reports: 'JPG reports', reportMonth: 'Month sheet', reportMember: 'Member statement', reportPayout: 'Payout slip', payoutSlip: 'Payout slip',
+      chooseMember: 'Choose member', downloadJpg: 'Download JPG', shareImage: 'Share', exportCsv: 'Export CSV',
+      backup: 'Backup', downloadBackup: 'Download', backupHint: 'A full backup file of your committees. Keep it safe: it contains members and secret links.',
+      upcoming: 'Upcoming', payoutRow: 'Payout', close: 'Close', generated: 'Created on {d}', amountShort: 'Amount', date: 'Date', details: 'Details', memberTotalPaid: 'Total paid',
       waMsg: '{name}: the ballot will be held on {when}. Watch it live on your phone: {link}',
       waMsgNoTime: '{name}: the ballot is coming up. Watch it live on your phone: {link}',
     },
@@ -40,7 +55,7 @@
       firstSetup: 'پہلی بار سیٹ اپ', setupTitle: 'سپر ایڈمن بنائیں', setupKey: 'سیٹ اپ کی', createAccount: 'اکاؤنٹ بنائیں',
       committees: 'کمیٹیاں', newCommittee: 'نئی کمیٹی', noCommittees: 'ابھی کوئی کمیٹی نہیں۔ اپنی پہلی کمیٹی بنائیں۔',
       name: 'نام', committeeName: 'کمیٹی کا نام', months: 'مہینوں کی تعداد', amount: 'ماہانہ رقم (روپے)',
-      startDate: 'شروع ہونے کی تاریخ', payoutOrder: 'وصولی کی ترتیب', fixed: 'مقررہ ترتیب', ballot: 'قرعہ اندازی', manual: 'ہر مہینے طے ہو',
+      startDate: 'شروع ہونے کی تاریخ', payoutOrder: 'وصولی کی ترتیب', mode_fixed: 'مقررہ ترتیب', mode_ballot: 'قرعہ اندازی', mode_manual: 'ہر مہینے طے ہو',
       notes: 'نوٹس (اختیاری)', save: 'محفوظ کریں', cancel: 'منسوخ', edit: 'ترمیم', delete: 'حذف کریں', back: 'واپس',
       members: 'ممبرز', addMember: 'ممبر شامل کریں', editMember: 'ممبر میں ترمیم', phoneOptional: 'فون نمبر (اختیاری)',
       turn: 'باری', turnOptional: 'باری کا نمبر', noMembers: 'ابھی کوئی ممبر نہیں۔ پہلا ممبر شامل کریں۔',
@@ -63,6 +78,21 @@
       getReady: 'تیار ہو جائیں…', spinning: 'پہیہ گھوم رہا ہے…', congrats: 'مبارک ہو!', turnNo: 'باری نمبر {n}', turnGoesTo: 'باری {n}: {name}',
       drawLog: 'قرعہ اندازی کا ریکارڈ', drawComplete: 'قرعہ اندازی مکمل۔ تمام باریاں نکل چکی ہیں۔', remaining: 'پہیے میں {n} نام', ok: 'ٹھیک ہے',
       ballotScheduled: 'قرعہ اندازی کا وقت', noTime: 'وقت مقرر نہیں',
+      payments: 'ادائیگیاں', stPaid: 'ادا', stPartial: 'جزوی', stPending: 'باقی', monthN: 'مہینہ {n}', month: 'مہینہ',
+      collected: 'جمع ہوئے', expected: 'متوقع', totalCollected: 'کل جمع شدہ', outstanding: 'اب تک باقی', payoutsGiven: 'دی گئی وصولیاں',
+      amountPaid: 'وصول شدہ رقم (روپے)', paidOn: 'تاریخ', method: 'طریقہ', cash: 'نقد', bank: 'بینک ٹرانسفر', jazzcash: 'جاز کیش', easypaisa: 'ایزی پیسہ', other: 'دیگر',
+      reference: 'ریفرنس نمبر (اختیاری)', markPaid: 'ادا شدہ کریں', markAllPaid: 'سب کو ادا کریں',
+      markAllAsk: 'مہینہ {n} کے جن ممبرز کا کوئی اندراج نہیں انہیں ادا شدہ کریں؟',
+      payoutThisMonth: 'اس مہینے کی وصولی', receiver: 'وصول کرنے والا', recordPayout: 'وصولی درج کریں', payoutAmount: 'وصولی کی رقم (روپے)',
+      payoutGiven: '{d} کو دی گئی', payoutNotGiven: 'ابھی نہیں دی گئی', noReceiver: 'ابھی کسی ممبر کی باری {n} نہیں۔', register: 'مکمل رجسٹر',
+      remind: 'یاد دہانی', remindTitle: 'مہینہ {n} کے باقی ممبرز', sendWhatsApp: 'واٹس ایپ', copyGroupMsg: 'گروپ پیغام کاپی کریں', copiedMsg: 'پیغام کاپی ہو گیا',
+      nobodyPending: 'اس مہینے سب نے ادا کر دیا ہے۔', noPhone: 'فون نمبر محفوظ نہیں',
+      remMsg: 'السلام علیکم {name}، یاد دہانی: {committee} کمیٹی کی مہینہ {n} کی {amount} کی ادائیگی باقی ہے۔ براہِ کرم ادا کر کے بتا دیں۔ شکریہ۔',
+      remGroupMsg: '{committee} کمیٹی، مہینہ {n}: ان کی ادائیگی باقی ہے: {names}۔ براہِ کرم جلد ادا کر دیں۔',
+      reports: 'جے پی جی رپورٹ', reportMonth: 'ماہانہ شیٹ', reportMember: 'ممبر کا اسٹیٹمنٹ', reportPayout: 'وصولی کی پرچی', payoutSlip: 'وصولی کی پرچی',
+      chooseMember: 'ممبر چنیں', downloadJpg: 'JPG ڈاؤن لوڈ کریں', shareImage: 'شیئر کریں', exportCsv: 'CSV ایکسپورٹ',
+      backup: 'بیک اپ', downloadBackup: 'ڈاؤن لوڈ', backupHint: 'آپ کی تمام کمیٹیوں کا مکمل بیک اپ۔ اسے محفوظ رکھیں: اس میں ممبرز اور خفیہ لنک ہیں۔',
+      upcoming: 'آئندہ', payoutRow: 'وصولی', close: 'بند کریں', generated: 'تاریخ: {d}', amountShort: 'رقم', date: 'تاریخ', details: 'تفصیل', memberTotalPaid: 'کل ادا شدہ',
       waMsg: '{name}: قرعہ اندازی {when} کو ہو گی۔ اپنے موبائل پر لائیو دیکھیں: {link}',
       waMsgNoTime: '{name}: قرعہ اندازی جلد ہو گی۔ اپنے موبائل پر لائیو دیکھیں: {link}',
     },
@@ -84,7 +114,7 @@
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const num = (n) => Number(n || 0).toLocaleString('en-PK');
   const money = (n) => (lang === 'ur' ? `${num(n)} روپے` : `Rs ${num(n)}`);
-  const modeLabel = (m) => t(m);
+  const modeLabel = (m) => t('mode_' + m);
 
   function applyLang(l) {
     lang = l;
@@ -323,7 +353,7 @@
     shell(`
       <a class="small" href="#/">← ${esc(t('back'))}</a>
       <div class="head"><h1>${esc(c.name)} ${c.status !== 'active' ? `<span class="tag">${esc(t('st_' + c.status))}</span>` : ''}</h1>
-        <div class="actions"><button class="primary" data-ballot>${esc(t('ballot'))}</button><button class="ghost" data-ec>${esc(t('edit'))}</button><button class="danger" data-dc>${esc(t('delete'))}</button></div></div>
+        <div class="actions"><button class="primary" data-pay>${esc(t('payments'))}</button><button class="ghost" data-ballot>${esc(t('ballot'))}</button><button class="ghost" data-ec>${esc(t('edit'))}</button><button class="danger" data-dc>${esc(t('delete'))}</button></div></div>
       <div class="facts">
         <span><b>${esc(money(c.amount))}</b> ${esc(t('perMonth'))}</span>
         <span><b>${c.months}</b> ${esc(t('monthsUnit'))}</span>
@@ -349,6 +379,7 @@
           <button class="ghost" data-nl>${esc(t('newLink'))}</button></div>
       </section>`);
 
+    $('[data-pay]').onclick = () => go('/c/' + id + '/sheet');
     $('[data-ballot]').onclick = () => go('/c/' + id + '/draw');
     $('[data-ec]').onclick = () => openForm({
       title: t('edit'),
@@ -440,7 +471,15 @@
           <button class="link-btn" data-prof>${esc(t('edit'))}</button></div>
         <div class="item"><div class="grow"><div class="title">${esc(t('changePassword'))}</div></div>
           <button class="link-btn" data-pw>${esc(t('edit'))}</button></div>
+        <div class="item"><div class="grow"><div class="title">${esc(t('backup'))}</div><div class="muted small">${esc(t('backupHint'))}</div></div>
+          <button class="link-btn" data-bk>${esc(t('downloadBackup'))}</button></div>
       </div>`);
+    $('[data-bk]').onclick = async () => {
+      try {
+        const data = await api('/api/export');
+        downloadBlob(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }), `committee-backup-${todayStr()}.json`);
+      } catch (e) { toast(e.message); }
+    };
     $('[data-prof]').onclick = () => openForm({
       title: t('profile'),
       fields: [
@@ -525,8 +564,14 @@
         ctx.rotate(i * a + a / 2);
         ctx.fillStyle = fg;
         const full = pool[i].name;
+        const maxW = R * 0.8 - 16; // from the rim almost to the hub
+        let size = fs;
+        ctx.font = `600 ${size}px Manrope, 'Noto Naskh Arabic', sans-serif`;
+        while (size > 13 && ctx.measureText(full).width > maxW) {
+          size -= 1;
+          ctx.font = `600 ${size}px Manrope, 'Noto Naskh Arabic', sans-serif`;
+        }
         let label = full;
-        const maxW = R * 0.62;
         while (label.length > 1 && ctx.measureText(label).width > maxW) label = label.slice(0, -1);
         if (label !== full) label += '…';
         ctx.fillText(label, R - 16, 0);
@@ -570,10 +615,11 @@
       const now = Date.now() + skew;
       const last = state.steps[state.steps.length - 1];
       if (d.status === 'done' && last && now > last.reveal_at + 30000) return 30000;
-      if (last && now < last.reveal_at + 8000) return 2000;
-      if (d.status === 'live') return 3000;
-      if (d.scheduled_at && d.scheduled_at - now < 120000) return 2500;
-      return 10000;
+      if (last && now < last.reveal_at + 8000) return 2000;      // a spin is happening right now
+      if (d.status === 'live') return 2500;                       // between spins
+      if (!d.scheduled_at) return 3000;                           // waiting for the organizer to start
+      if (d.scheduled_at - now < 10 * 60000) return 2500;         // start time is near (or has passed)
+      return 15000;                                               // still far away
     }
     async function poll() {
       clearTimeout(pollTimer);
@@ -829,7 +875,8 @@
       ${c.notes ? `<p class="muted">${esc(c.notes)}</p>` : ''}
       <div id="stage"></div><div id="cal" class="ctl small"></div>
       <section id="logbox" hidden><h2>${esc(t('drawLog'))}</h2><div class="list" id="log"></div></section>
-      <section><h2>${esc(t('members'))}</h2><div class="list" id="mlist"></div></section>`, false);
+      <section><h2>${esc(t('members'))}</h2><div class="list" id="mlist"></div></section>
+      <section><h2>${esc(t('payments'))}</h2><div id="ledger"></div></section>`, false);
 
     const paint = (ms) => {
       c.turns = ms.map((m) => m.turn_no).filter((n) => n !== null);
@@ -837,6 +884,7 @@
       $('#mlist').innerHTML = rowsOf(ms);
     };
     paint(d.members);
+    mountLedger($('#ledger'), { c, members: d.members, canEdit: false, fetchLedger: () => api('/api/public/' + encodeURIComponent(tok) + '/ledger') });
     const refreshMembers = async () => {
       try { paint((await api('/api/public/' + encodeURIComponent(tok))).members); } catch { /* keep current list */ }
     };
@@ -858,6 +906,448 @@
     });
   }
 
+  // ---------- payments, payouts, reports, backup ----------
+  const METHOD_KEYS = ['cash', 'bank', 'jazzcash', 'easypaisa', 'other'];
+  const STATUS_COLOR = { paid: '#0b6e6e', partial: '#b97a00', pending: '#b3261e' };
+  const stLabel = (s) => t(s === 'paid' ? 'stPaid' : s === 'partial' ? 'stPartial' : 'stPending');
+  const todayStr = () => new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+  const fmtDate = (s) => { if (!s) return ''; const [y, m, d] = s.split('-'); return `${d}/${m}/${y}`; };
+  const slug = (s) => String(s).replace(/[^\w]+/g, '-').replace(/^-|-$/g, '') || 'committee';
+  const range = (n) => Array.from({ length: n }, (_, i) => i + 1);
+
+  function monthLabel(c, n) {
+    if (!c.start_date) return '';
+    const [y, m] = c.start_date.split('-').map(Number);
+    return new Date(y, m - 2 + n, 1).toLocaleDateString(lang === 'ur' ? 'ur-PK' : 'en-GB', { month: 'long', year: 'numeric' });
+  }
+  function defaultMonth(c) {
+    const s = currentMonth(c);
+    return s.state === 'running' ? s.n : s.state === 'finished' ? c.months : 1;
+  }
+  function waNumber(p) {
+    let d = String(p || '').replace(/[^\d+]/g, '');
+    if (!d) return '';
+    if (d.startsWith('+')) return d.slice(1);
+    if (d.startsWith('00')) return d.slice(2);
+    if (d.startsWith('0')) return '92' + d.slice(1);
+    if (/^3\d{9}$/.test(d)) return '92' + d;
+    return d;
+  }
+  function downloadBlob(blob, name) {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = name;
+    document.body.append(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+  }
+
+  function openDialog(title, html, bind) {
+    const dlg = document.createElement('dialog');
+    dlg.innerHTML = `<h3>${esc(title)}</h3>${html}<div class="row"><button type="button" class="ghost" data-x>${esc(t('close'))}</button></div>`;
+    $('[data-x]', dlg).onclick = () => dlg.close();
+    dlg.addEventListener('close', () => dlg.remove());
+    document.body.append(dlg);
+    dlg.showModal();
+    if (bind) bind(dlg);
+    return dlg;
+  }
+
+  function showImage(blob, name) {
+    const url = URL.createObjectURL(blob);
+    const file = new File([blob], name, { type: 'image/jpeg' });
+    const canShare = !!(navigator.canShare && navigator.canShare({ files: [file] }));
+    const dlg = openDialog(t('reports'),
+      `<img class="preview" src="${url}" alt=""><div class="actions center"><button class="primary" data-dl type="button">${esc(t('downloadJpg'))}</button>${canShare ? `<button class="ghost" data-sh type="button">${esc(t('shareImage'))}</button>` : ''}</div>`,
+      (d) => {
+        $('[data-dl]', d).onclick = () => downloadBlob(blob, name);
+        const sh = $('[data-sh]', d);
+        if (sh) sh.onclick = () => navigator.share({ files: [file] }).catch(() => {});
+      });
+    dlg.addEventListener('close', () => URL.revokeObjectURL(url));
+  }
+
+  function rrPath(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+  function rr(ctx, x, y, w, h, r, fill) { rrPath(ctx, x, y, w, h, r); ctx.fillStyle = fill; ctx.fill(); }
+
+  // Draws a report straight onto a canvas (no libraries), in English or Urdu (right-to-left).
+  async function renderReport({ title, subtitle, chip, cols, rows, summary = [], footer }) {
+    try {
+      await Promise.all([
+        document.fonts.load('600 28px Manrope', 'Aa1'),
+        document.fonts.load('600 28px "Noto Naskh Arabic"', 'ابج'),
+      ]);
+    } catch { /* fall back to system fonts */ }
+    const rtl = lang === 'ur';
+    const W = 1080, M = 48, SC = 2, headH = 190, thH = 66, rowH = 74;
+    const sumH = summary.length ? summary.length * 54 + 44 : 0;
+    const tableTop = headH + 32;
+    const tableH = thH + rows.length * rowH;
+    const H = tableTop + tableH + 28 + sumH + 100;
+    const cv = document.createElement('canvas');
+    cv.width = W * SC; cv.height = H * SC;
+    const ctx = cv.getContext('2d');
+    ctx.scale(SC, SC);
+    ctx.direction = rtl ? 'rtl' : 'ltr';
+    ctx.textBaseline = 'middle';
+    const F = (w, s) => `${w} ${s}px Manrope, 'Noto Naskh Arabic', sans-serif`;
+    const fit = (txt, maxW) => {
+      let s = String(txt ?? '');
+      if (ctx.measureText(s).width <= maxW) return s;
+      while (s.length > 1 && ctx.measureText(s + '…').width > maxW) s = s.slice(0, -1);
+      return s + '…';
+    };
+    const startX = rtl ? W - M : M, endX = rtl ? M : W - M;
+    const startAlign = rtl ? 'right' : 'left', endAlign = rtl ? 'left' : 'right';
+
+    ctx.fillStyle = '#f2f5f7'; ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = '#0b6e6e'; ctx.fillRect(0, 0, W, headH);
+    for (let i = 0; i < 12; i++) {
+      rr(ctx, rtl ? W - M - 18 - i * 26 : M + i * 26, headH - 38, 18, 18, 5, i === 3 ? '#e9a820' : 'rgba(255,255,255,0.25)');
+    }
+    let chipW = 0;
+    if (chip) {
+      ctx.font = F(700, 28);
+      chipW = ctx.measureText(chip).width + 44;
+      const x0 = rtl ? M : W - M - chipW;
+      rr(ctx, x0, 36, chipW, 54, 27, '#e9a820');
+      ctx.fillStyle = '#14212b'; ctx.textAlign = 'center';
+      ctx.fillText(chip, x0 + chipW / 2, 64);
+    }
+    ctx.textAlign = startAlign; ctx.fillStyle = '#ffffff'; ctx.font = F(700, 44);
+    ctx.fillText(fit(title, W - 2 * M - chipW - 24), startX, 64);
+    ctx.fillStyle = 'rgba(255,255,255,0.9)'; ctx.font = F(500, 27);
+    ctx.fillText(fit(subtitle, W - 2 * M), startX, 122);
+
+    // table panel
+    ctx.save();
+    rrPath(ctx, M, tableTop, W - 2 * M, tableH, 18);
+    ctx.fillStyle = '#ffffff'; ctx.fill(); ctx.clip();
+    ctx.fillStyle = '#e8eef1'; ctx.fillRect(M, tableTop, W - 2 * M, thH);
+    rows.forEach((_, i) => { if (i % 2) { ctx.fillStyle = '#f7f9fa'; ctx.fillRect(M, tableTop + thH + i * rowH, W - 2 * M, rowH); } });
+    ctx.restore();
+
+    const tw = W - 2 * M, totalW = cols.reduce((a, c) => a + c.w, 0);
+    let acc = 0;
+    const geo = cols.map((c) => {
+      const w = (tw * c.w) / totalW;
+      const x0 = rtl ? W - M - acc - w : M + acc;
+      acc += w;
+      return { x0, x1: x0 + w, w };
+    });
+    const put = (txt, g, align, y) => {
+      const pad = 20;
+      ctx.textAlign = align === 'center' ? 'center' : align === 'end' ? endAlign : startAlign;
+      const x = align === 'center' ? (g.x0 + g.x1) / 2 : ctx.textAlign === 'left' ? g.x0 + pad : g.x1 - pad;
+      ctx.fillText(fit(txt, g.w - pad * 2), x, y);
+    };
+    ctx.font = F(700, 24); ctx.fillStyle = '#66737f';
+    cols.forEach((c, i) => put(c.label, geo[i], c.align || 'start', tableTop + thH / 2));
+    rows.forEach((row, r) => {
+      const y = tableTop + thH + r * rowH + rowH / 2;
+      row.forEach((cell, i) => {
+        ctx.font = F(cell.bold ? 700 : 500, 28);
+        ctx.fillStyle = cell.color || '#14212b';
+        put(cell.text, geo[i], cols[i].align || 'start', y);
+      });
+    });
+
+    let y = tableTop + tableH + 28;
+    if (summary.length) {
+      rr(ctx, M, y, W - 2 * M, sumH, 18, '#ffffff');
+      summary.forEach(([label, value], i) => {
+        const cy = y + 22 + i * 54 + 27;
+        ctx.textAlign = startAlign; ctx.font = F(500, 26); ctx.fillStyle = '#66737f';
+        ctx.fillText(label, startX + (rtl ? -24 : 24), cy);
+        ctx.textAlign = endAlign; ctx.font = F(700, 28); ctx.fillStyle = '#14212b';
+        ctx.fillText(fit(value, 560), endX + (rtl ? 24 : -24), cy);
+      });
+      y += sumH;
+    }
+    ctx.textAlign = 'center'; ctx.font = F(500, 22); ctx.fillStyle = '#66737f';
+    ctx.fillText(footer, W / 2, H - 46);
+    return cv;
+  }
+
+  async function makeJpg(spec, filename) {
+    const cv = await renderReport(spec);
+    cv.toBlob((b) => { if (b) showImage(b, filename); }, 'image/jpeg', 0.92);
+  }
+
+  // The payment sheet. The organizer can edit; members get the same view read-only.
+  function mountLedger(el, { c, members, canEdit, committeeId, fetchLedger }) {
+    const list = [...members].sort((a, b) => (a.turn_no ?? 1e9) - (b.turn_no ?? 1e9) || a.id - b.id);
+    const months = range(c.months);
+    let ledger = { payments: [], payouts: [] };
+    let month = defaultMonth(c);
+
+    async function load() { ledger = await fetchLedger(); render(); }
+
+    function render() {
+      const pm = new Map(ledger.payments.map((p) => [p.member_id + ':' + p.month_no, p]));
+      const po = new Map(ledger.payouts.map((p) => [p.month_no, p]));
+      const cm = currentMonth(c);
+      const nowM = cm.state === 'running' ? cm.n : 0;
+      const nameOf = (id) => (list.find((m) => m.id === id) || {}).name || '?';
+      const pot = c.amount * c.months;
+
+      const totals = (n) => {
+        let collected = 0, paid = 0, partial = 0;
+        for (const m of list) {
+          const p = pm.get(m.id + ':' + n);
+          if (!p) continue;
+          collected += p.amount;
+          if (p.status === 'paid') paid++; else if (p.status === 'partial') partial++;
+        }
+        return { collected, expected: c.amount * list.length, paid, partial, pending: list.length - paid - partial };
+      };
+      const T = totals(month);
+      const dueMonths = cm.state === 'running' ? cm.n : cm.state === 'notStarted' ? 0 : c.months;
+      let collectedAll = 0, collectedDue = 0;
+      for (const p of ledger.payments) { collectedAll += p.amount; if (p.month_no <= dueMonths) collectedDue += p.amount; }
+      const outstanding = Math.max(0, c.amount * list.length * dueMonths - collectedDue);
+      const pct = T.expected ? Math.min(100, Math.round((T.collected * 100) / T.expected)) : 0;
+      const ml = monthLabel(c, month);
+
+      const rows = list.map((m) => {
+        const p = pm.get(m.id + ':' + month);
+        const st = p ? p.status : 'pending';
+        const bits = [];
+        if (p && p.paid_on) bits.push(fmtDate(p.paid_on));
+        if (p && p.method) bits.push(t(p.method));
+        if (p && (st === 'partial' || p.amount !== c.amount)) bits.push(money(p.amount));
+        return `<div class="item">
+          <div class="badge${m.turn_no ? ' has' : ''}">${m.turn_no ?? '–'}</div>
+          <div class="grow"><div class="title">${esc(m.name)}</div>${bits.length ? `<div class="facts small">${bits.map((x) => `<span><bdi>${esc(x)}</bdi></span>`).join('')}</div>` : ''}</div>
+          <span class="chip ${st}">${esc(stLabel(st))}</span>
+          ${canEdit ? `${st === 'paid' ? '' : `<button class="link-btn" data-quick="${m.id}" title="${esc(t('markPaid'))}" aria-label="${esc(t('markPaid'))}">✓</button>`}<button class="link-btn" data-edit="${m.id}">${esc(t('edit'))}</button>` : ''}
+        </div>`;
+      }).join('') || `<div class="empty">${esc(t('noMembers'))}</div>`;
+
+      const payout = po.get(month);
+      const receiver = list.find((m) => m.turn_no === month);
+      const payoutHtml = `<div class="payout">
+        <div class="muted small">${esc(t('payoutThisMonth'))}</div>
+        ${payout
+          ? `<div class="title">${esc(nameOf(payout.member_id))} <span class="chip paid">${esc(t('payoutGiven', { d: fmtDate(payout.paid_on) }))}</span></div><div class="muted small"><bdi>${esc(money(payout.amount))}</bdi></div>`
+          : receiver
+            ? `<div class="title">${esc(receiver.name)} <span class="chip pending">${esc(t('payoutNotGiven'))}</span></div><div class="muted small"><bdi>${esc(money(pot))}</bdi></div>`
+            : `<div class="muted">${esc(t('noReceiver', { n: month }))}</div>`}
+        ${canEdit ? `<div class="actions"><button class="ghost" data-payout>${esc(payout ? t('edit') : t('recordPayout'))}</button>${payout ? `<button class="danger" data-delpayout>${esc(t('delete'))}</button>` : ''}</div>` : ''}
+      </div>`;
+
+      const reg = `<div class="reg-wrap"><table class="reg"><thead><tr><th class="sticky">${esc(t('name'))}</th>${months.map((n) =>
+        `<th><button class="rh${n === month ? ' on' : ''}${n === nowM ? ' now' : ''}" data-m="${n}">${n}</button></th>`).join('')}</tr></thead><tbody>${list.map((m) =>
+        `<tr><th class="sticky">${esc(m.name)}</th>${months.map((n) => {
+          const p = pm.get(m.id + ':' + n);
+          const st = p ? p.status : 'pending';
+          return `<td class="${n === month ? 'sel' : ''}"><span class="dot ${st}${m.turn_no === n ? ' turn' : ''}" title="${esc(stLabel(st))}"></span></td>`;
+        }).join('')}</tr>`).join('')}<tr class="po"><th class="sticky">${esc(t('payoutRow'))}</th>${months.map((n) =>
+        `<td class="${n === month ? 'sel' : ''}">${po.has(n) ? '<span class="star">★</span>' : ''}</td>`).join('')}</tr></tbody></table></div>`;
+
+      el.innerHTML = `
+        <div class="dash">
+          <div>
+            <div class="muted small">${esc(t('monthN', { n: month }))}${ml ? ' — ' + esc(ml) : ''}</div>
+            <div class="big"><bdi>${esc(money(T.collected))}</bdi> <span class="muted">/ <bdi>${esc(money(T.expected))}</bdi></span></div>
+            <div class="bar"><i style="width:${pct}%"></i></div>
+            <div class="facts small"><span class="ok">${esc(t('stPaid'))}: <b>${T.paid}</b></span><span class="mid">${esc(t('stPartial'))}: <b>${T.partial}</b></span><span class="bad">${esc(t('stPending'))}: <b>${T.pending}</b></span></div>
+          </div>
+          <div class="facts side">
+            <span>${esc(t('totalCollected'))}: <b>${esc(money(collectedAll))}</b></span>
+            <span>${esc(t('outstanding'))}: <b>${esc(money(outstanding))}</b></span>
+            <span>${esc(t('payoutsGiven'))}: <b>${ledger.payouts.length}/${c.months}</b></span>
+          </div>
+        </div>
+        <div class="pills" role="group">${months.map((n) =>
+          `<button class="pill${n === month ? ' on' : ''}${n === nowM ? ' now' : ''}${po.has(n) ? ' given' : ''}" data-m="${n}">${n}</button>`).join('')}</div>
+        <section class="tight">
+          <div class="head"><h2>${esc(t('monthN', { n: month }))}</h2>
+            ${canEdit ? `<div class="actions"><button class="ghost" data-markall>${esc(t('markAllPaid'))}</button><button class="ghost" data-remind>${esc(t('remind'))}</button><button class="ghost" data-reports>${esc(t('reports'))}</button><button class="ghost" data-csv>${esc(t('exportCsv'))}</button></div>` : ''}</div>
+          <div class="list">${rows}</div>
+        </section>
+        <section>${payoutHtml}</section>
+        <section><h2>${esc(t('register'))}</h2>${reg}</section>`;
+
+      $$('[data-m]', el).forEach((b) => { b.onclick = () => { month = +b.dataset.m; render(); }; });
+      if (!canEdit) return;
+
+      const base = `/api/committees/${committeeId}`;
+      const act = async (fn) => { try { await fn(); await load(); } catch (e) { toast(e.message); } };
+
+      $$('[data-quick]', el).forEach((b) => { b.onclick = () => act(() => api(base + '/payments', { method: 'PUT', body: { member_id: +b.dataset.quick, month_no: month, status: 'paid', paid_on: todayStr() } })); });
+      $$('[data-edit]', el).forEach((b) => { b.onclick = () => editPayment(+b.dataset.edit); });
+      $('[data-markall]', el).onclick = () => {
+        if (!confirm(t('markAllAsk', { n: month }))) return;
+        act(() => api(base + '/payments/bulk', { method: 'POST', body: { month_no: month, paid_on: todayStr() } }));
+      };
+      $('[data-payout]', el).onclick = () => payoutForm();
+      const dp = $('[data-delpayout]', el);
+      if (dp) dp.onclick = () => { if (confirm(t('confirmDelete'))) act(() => api(`${base}/payouts/${month}`, { method: 'DELETE' })); };
+      $('[data-remind]', el).onclick = () => reminders();
+      $('[data-reports]', el).onclick = () => reportsMenu();
+      $('[data-csv]', el).onclick = () => exportCsv();
+
+      function editPayment(mid) {
+        const m = list.find((x) => x.id === mid);
+        const p = pm.get(mid + ':' + month);
+        openForm({
+          title: `${m.name} — ${t('monthN', { n: month })}`,
+          fields: [
+            { name: 'status', label: t('status'), type: 'select', options: [['paid', t('stPaid')], ['partial', t('stPartial')], ['pending', t('stPending')]] },
+            { name: 'amount', label: t('amountPaid'), type: 'number', min: 0 },
+            { name: 'paid_on', label: t('paidOn'), type: 'date', dir: 'ltr' },
+            { name: 'method', label: t('method'), type: 'select', options: [['', '—'], ...METHOD_KEYS.map((k) => [k, t(k)])] },
+            { name: 'reference', label: t('reference') },
+            { name: 'notes', label: t('notes'), type: 'textarea' },
+          ],
+          values: { status: p ? p.status : 'paid', amount: p ? p.amount : c.amount, paid_on: p ? p.paid_on : todayStr(), method: p ? p.method || '' : '', reference: p ? p.reference || '' : '', notes: p ? p.notes || '' : '' },
+          onSubmit: async (v) => { await api(base + '/payments', { method: 'PUT', body: { ...v, member_id: mid, month_no: month } }); await load(); },
+        });
+      }
+
+      function payoutForm() {
+        const cur = po.get(month);
+        openForm({
+          title: t('recordPayout') + ' — ' + t('monthN', { n: month }),
+          fields: [
+            { name: 'member_id', label: t('receiver'), type: 'select', options: list.map((m) => [m.id, m.name]) },
+            { name: 'amount', label: t('payoutAmount'), type: 'number', min: 0 },
+            { name: 'paid_on', label: t('paidOn'), type: 'date', dir: 'ltr' },
+            { name: 'notes', label: t('notes'), type: 'textarea' },
+          ],
+          values: { member_id: cur ? cur.member_id : receiver ? receiver.id : list[0] && list[0].id, amount: cur ? cur.amount : pot, paid_on: cur ? cur.paid_on : todayStr(), notes: cur ? cur.notes || '' : '' },
+          onSubmit: async (v) => { await api(base + '/payouts', { method: 'PUT', body: { ...v, month_no: month } }); await load(); },
+        });
+      }
+
+      function reminders() {
+        const pend = list.filter((m) => { const p = pm.get(m.id + ':' + month); return !p || p.status !== 'paid'; });
+        const sep = lang === 'ur' ? '، ' : ', ';
+        const items = pend.map((m) => {
+          const p = pm.get(m.id + ':' + month);
+          const due = c.amount - (p ? p.amount : 0);
+          const msg = t('remMsg', { name: m.name, committee: c.name, amount: money(due), n: month });
+          const href = `https://wa.me/${waNumber(m.phone)}?text=${encodeURIComponent(msg)}`;
+          return `<div class="item"><div class="grow"><div class="title">${esc(m.name)}</div>
+            <div class="muted small">${m.phone ? `<bdi dir="ltr">${esc(m.phone)}</bdi>` : esc(t('noPhone'))} — <bdi>${esc(money(due))}</bdi></div></div>
+            <a class="primary" target="_blank" rel="noopener" href="${esc(href)}">${esc(t('sendWhatsApp'))}</a></div>`;
+        }).join('');
+        const groupMsg = t('remGroupMsg', { committee: c.name, n: month, names: pend.map((m) => m.name).join(sep) });
+        openDialog(t('remindTitle', { n: month }),
+          pend.length
+            ? `<div class="list">${items}</div><div class="actions center"><button class="ghost" data-copy type="button">${esc(t('copyGroupMsg'))}</button></div>`
+            : `<p class="muted">${esc(t('nobodyPending'))}</p>`,
+          (d) => {
+            const cb = $('[data-copy]', d);
+            if (cb) cb.onclick = async () => { try { await navigator.clipboard.writeText(groupMsg); toast(t('copiedMsg')); } catch { toast(groupMsg); } };
+          });
+      }
+
+      function reportsMenu() {
+        openDialog(t('reports'),
+          `<div class="menu"><button class="ghost" data-r="month">${esc(t('reportMonth'))}</button><button class="ghost" data-r="member">${esc(t('reportMember'))}</button>${po.has(month) ? `<button class="ghost" data-r="slip">${esc(t('reportPayout'))}</button>` : ''}</div>`,
+          (d) => { $$('[data-r]', d).forEach((b) => { b.onclick = () => { d.close(); runReport(b.dataset.r); }; }); });
+      }
+
+      function runReport(kind) {
+        const footer = t('generated', { d: fmtDate(todayStr()) });
+        if (kind === 'month') {
+          const data = list.map((m) => {
+            const p = pm.get(m.id + ':' + month);
+            const st = p ? p.status : 'pending';
+            return [{ text: String(m.turn_no ?? '–') }, { text: m.name, bold: true }, { text: stLabel(st), color: STATUS_COLOR[st], bold: true },
+              { text: p ? num(p.amount) : '–' }, { text: p && p.paid_on ? fmtDate(p.paid_on) : '–' }];
+          });
+          const summary = [[t('collected'), money(T.collected)], [t('expected'), money(T.expected)], [`${t('stPaid')} / ${t('stPartial')} / ${t('stPending')}`, `${T.paid} / ${T.partial} / ${T.pending}`]];
+          if (payout) summary.push([t('payoutThisMonth'), `${nameOf(payout.member_id)} — ${money(payout.amount)}`]);
+          makeJpg({
+            title: c.name, subtitle: `${t('monthN', { n: month })}${ml ? ' — ' + ml : ''}`, chip: t('monthN', { n: month }),
+            cols: [{ label: t('turn'), w: 1.1 }, { label: t('name'), w: 4 }, { label: t('status'), w: 2.2 }, { label: t('amountShort'), w: 2, align: 'end' }, { label: t('date'), w: 2.2 }],
+            rows: data, summary, footer,
+          }, `${slug(c.name)}-month-${month}.jpg`);
+        } else if (kind === 'member') {
+          openForm({
+            title: t('chooseMember'),
+            fields: [{ name: 'member_id', label: t('name'), type: 'select', options: list.map((m) => [m.id, m.name]) }],
+            values: { member_id: list[0] && list[0].id },
+            submitLabel: t('reportMember'),
+            onSubmit: async (v) => {
+              const m = list.find((x) => x.id === +v.member_id);
+              let paidAll = 0, paidDue = 0;
+              const data = months.map((n) => {
+                const p = pm.get(m.id + ':' + n);
+                const st = p ? p.status : 'pending';
+                if (p) { paidAll += p.amount; if (n <= dueMonths) paidDue += p.amount; }
+                const upcoming = !p && n > dueMonths;
+                return [{ text: String(n) + (m.turn_no === n ? ' ★' : '') }, { text: monthLabel(c, n) || '–' },
+                  upcoming ? { text: t('upcoming'), color: '#66737f' } : { text: stLabel(st), color: STATUS_COLOR[st], bold: true },
+                  { text: p ? num(p.amount) : '–' }, { text: p && p.paid_on ? fmtDate(p.paid_on) : '–' }];
+              });
+              const got = ledger.payouts.find((x) => x.member_id === m.id);
+              const summary = [[t('memberTotalPaid'), money(paidAll)], [t('outstanding'), money(Math.max(0, c.amount * dueMonths - paidDue))]];
+              if (got) summary.push([t('reportPayout'), `${t('monthN', { n: got.month_no })} — ${money(got.amount)}`]);
+              await makeJpg({
+                title: m.name, subtitle: c.name, chip: m.turn_no ? `${t('turn')} ${m.turn_no}` : '',
+                cols: [{ label: t('month'), w: 1.3 }, { label: '', w: 3 }, { label: t('status'), w: 2.2 }, { label: t('amountShort'), w: 2, align: 'end' }, { label: t('date'), w: 2.2 }],
+                rows: data, summary, footer,
+              }, `${slug(c.name)}-${slug(m.name)}.jpg`);
+            },
+          });
+        } else if (kind === 'slip' && payout) {
+          const data = [
+            [{ text: t('receiver') }, { text: nameOf(payout.member_id), bold: true }],
+            [{ text: t('month') }, { text: t('monthN', { n: month }) + (ml ? ' — ' + ml : '') }],
+            [{ text: t('payoutAmount') }, { text: money(payout.amount), bold: true, color: '#0b6e6e' }],
+            [{ text: t('date') }, { text: fmtDate(payout.paid_on) }],
+          ];
+          if (payout.notes) data.push([{ text: t('notes') }, { text: payout.notes }]);
+          makeJpg({
+            title: t('payoutSlip'), subtitle: c.name, chip: t('monthN', { n: month }),
+            cols: [{ label: t('details'), w: 2.2 }, { label: '', w: 3.6 }], rows: data, footer,
+          }, `${slug(c.name)}-payout-${month}.jpg`);
+        }
+      }
+
+      function exportCsv() {
+        const q = (v) => '"' + String(v ?? '').replace(/"/g, '""') + '"';
+        const lines = [[t('name'), t('turn'), ...months.map((n) => t('monthN', { n })), t('totalCollected')].map(q).join(',')];
+        for (const m of list) {
+          let sum = 0;
+          const cells = months.map((n) => {
+            const p = pm.get(m.id + ':' + n);
+            if (!p) return '';
+            sum += p.amount;
+            return p.amount + (p.status === 'partial' ? ' (' + t('stPartial') + ')' : '');
+          });
+          lines.push([m.name, m.turn_no ?? '', ...cells, sum].map(q).join(','));
+        }
+        downloadBlob(new Blob(['\ufeff' + lines.join('\r\n')], { type: 'text/csv;charset=utf-8' }), slug(c.name) + '-register.csv');
+      }
+    }
+
+    el.innerHTML = `<p class="muted">${esc(t('loading'))}</p>`;
+    load().catch((e) => { el.innerHTML = `<p class="err">${esc(e.message || t('genericError'))}</p>`; });
+  }
+
+  async function viewSheet(id) {
+    shell(`<p class="muted">${esc(t('loading'))}</p>`);
+    const d = await api('/api/committees/' + id);
+    const c = d.committee;
+    shell(`<a class="small" href="#/c/${id}">← ${esc(c.name)}</a>
+      <div class="head"><h1>${esc(t('payments'))}</h1></div><div id="ledger"></div>`);
+    mountLedger($('#ledger'), { c, members: d.members, canEdit: true, committeeId: id, fetchLedger: () => api(`/api/committees/${id}/ledger`) });
+  }
+
   // ---------- router ----------
   async function router() {
     const h = location.hash.slice(1) || '/';
@@ -871,6 +1361,7 @@
         if (me.language !== lang) applyLang(me.language);
       }
       if ((m = h.match(/^\/c\/(\d+)\/draw$/))) return viewDraw(+m[1]);
+      if ((m = h.match(/^\/c\/(\d+)\/sheet$/))) return viewSheet(+m[1]);
       if ((m = h.match(/^\/c\/(\d+)$/))) return viewCommittee(+m[1]);
       if (h === '/users' && me.role === 'super_admin') return viewUsers();
       if (h === '/settings') return viewSettings();
